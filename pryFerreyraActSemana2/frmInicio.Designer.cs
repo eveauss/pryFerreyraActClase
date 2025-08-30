@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             gbMain = new GroupBox();
+            lblMain = new Label();
             btnIngresar = new Button();
             groupBox1 = new GroupBox();
-            lblMain = new Label();
             lblVer = new Label();
             gbMain.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -48,28 +48,7 @@
             gbMain.Size = new Size(574, 282);
             gbMain.TabIndex = 6;
             gbMain.TabStop = false;
-            // 
-            // btnIngresar
-            // 
-            btnIngresar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btnIngresar.BackColor = Color.Purple;
-            btnIngresar.ForeColor = Color.White;
-            btnIngresar.Location = new Point(206, 175);
-            btnIngresar.Name = "btnIngresar";
-            btnIngresar.Size = new Size(163, 48);
-            btnIngresar.TabIndex = 4;
-            btnIngresar.Text = "Ingresar";
-            btnIngresar.UseVisualStyleBackColor = false;
-            // 
-            // groupBox1
-            // 
-            groupBox1.BackColor = Color.Purple;
-            groupBox1.Controls.Add(gbMain);
-            groupBox1.Location = new Point(115, 50);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(609, 322);
-            groupBox1.TabIndex = 7;
-            groupBox1.TabStop = false;
+            gbMain.Enter += gbMain_Enter;
             // 
             // lblMain
             // 
@@ -82,6 +61,29 @@
             lblMain.TabIndex = 8;
             lblMain.Text = "Sistema de gestión de inventario";
             // 
+            // btnIngresar
+            // 
+            btnIngresar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btnIngresar.BackColor = Color.Purple;
+            btnIngresar.ForeColor = Color.White;
+            btnIngresar.Location = new Point(206, 175);
+            btnIngresar.Name = "btnIngresar";
+            btnIngresar.Size = new Size(163, 48);
+            btnIngresar.TabIndex = 4;
+            btnIngresar.Text = "Ingresar";
+            btnIngresar.UseVisualStyleBackColor = false;
+            btnIngresar.Click += btnIngresar_Click;
+            // 
+            // groupBox1
+            // 
+            groupBox1.BackColor = Color.Purple;
+            groupBox1.Controls.Add(gbMain);
+            groupBox1.Location = new Point(115, 50);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(609, 322);
+            groupBox1.TabIndex = 7;
+            groupBox1.TabStop = false;
+            // 
             // lblVer
             // 
             lblVer.AutoSize = true;
@@ -93,7 +95,7 @@
             lblVer.TabIndex = 9;
             lblVer.Text = "Versión 1.0";
             // 
-            // frmGestion
+            // frmInicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -101,7 +103,7 @@
             ClientSize = new Size(855, 449);
             Controls.Add(lblVer);
             Controls.Add(groupBox1);
-            Name = "frmGestion";
+            Name = "frmInicio";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Gestión de inventario";
             gbMain.ResumeLayout(false);

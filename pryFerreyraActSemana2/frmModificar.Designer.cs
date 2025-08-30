@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             gbModificar = new GroupBox();
-            btnModificar = new Button();
-            comboBox1 = new ComboBox();
-            label1 = new Label();
-            nPrecio = new NumericUpDown();
+            nudStock = new NumericUpDown();
+            lblStock = new Label();
+            nudPrecio = new NumericUpDown();
             dtpFecha = new DateTimePicker();
             lblFecha = new Label();
             lblPrecio = new Label();
@@ -40,19 +39,23 @@
             lblCategoria = new Label();
             lblNombre = new Label();
             lblCodigo = new Label();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            txtBuscar = new TextBox();
+            txtDsc = new TextBox();
+            txtCategoria = new TextBox();
+            txtNombre = new TextBox();
+            btnModificar = new Button();
+            txtCodigo = new TextBox();
             gbModificar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)nPrecio).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudStock).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudPrecio).BeginInit();
             SuspendLayout();
             // 
             // gbModificar
             // 
             gbModificar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             gbModificar.BackColor = Color.White;
-            gbModificar.Controls.Add(nPrecio);
+            gbModificar.Controls.Add(nudStock);
+            gbModificar.Controls.Add(lblStock);
+            gbModificar.Controls.Add(nudPrecio);
             gbModificar.Controls.Add(dtpFecha);
             gbModificar.Controls.Add(lblFecha);
             gbModificar.Controls.Add(lblPrecio);
@@ -60,13 +63,11 @@
             gbModificar.Controls.Add(lblCategoria);
             gbModificar.Controls.Add(lblNombre);
             gbModificar.Controls.Add(lblCodigo);
-            gbModificar.Controls.Add(textBox3);
-            gbModificar.Controls.Add(textBox2);
-            gbModificar.Controls.Add(textBox1);
-            gbModificar.Controls.Add(txtBuscar);
+            gbModificar.Controls.Add(txtDsc);
+            gbModificar.Controls.Add(txtCategoria);
+            gbModificar.Controls.Add(txtNombre);
             gbModificar.Controls.Add(btnModificar);
-            gbModificar.Controls.Add(label1);
-            gbModificar.Controls.Add(comboBox1);
+            gbModificar.Controls.Add(txtCodigo);
             gbModificar.Location = new Point(12, 12);
             gbModificar.Name = "gbModificar";
             gbModificar.Size = new Size(332, 363);
@@ -75,138 +76,134 @@
             gbModificar.Text = "Editar Producto";
             gbModificar.Enter += gbModificar_Enter;
             // 
-            // btnModificar
+            // nudStock
             // 
-            btnModificar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btnModificar.BackColor = Color.Purple;
-            btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(150, 315);
-            btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(75, 42);
-            btnModificar.TabIndex = 18;
-            btnModificar.Text = "Modificar";
-            btnModificar.UseVisualStyleBackColor = false;
+            nudStock.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            nudStock.Location = new Point(151, 175);
+            nudStock.Maximum = new decimal(new int[] { 999999999, 0, 0, 0 });
+            nudStock.Name = "nudStock";
+            nudStock.Size = new Size(100, 23);
+            nudStock.TabIndex = 36;
             // 
-            // comboBox1
+            // lblStock
             // 
-            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "queso", "si" });
-            comboBox1.Location = new Point(125, 22);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(100, 23);
-            comboBox1.TabIndex = 16;
+            lblStock.AutoSize = true;
+            lblStock.Location = new Point(81, 182);
+            lblStock.Name = "lblStock";
+            lblStock.Size = new Size(36, 15);
+            lblStock.TabIndex = 35;
+            lblStock.Text = "Stock";
             // 
-            // label1
+            // nudPrecio
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label1.AutoSize = true;
-            label1.Location = new Point(55, 29);
-            label1.Name = "label1";
-            label1.Size = new Size(56, 15);
-            label1.TabIndex = 17;
-            label1.Text = "Producto";
-            label1.Click += label1_Click;
-            // 
-            // nPrecio
-            // 
-            nPrecio.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            nPrecio.Location = new Point(127, 173);
-            nPrecio.Maximum = new decimal(new int[] { 999999999, 0, 0, 0 });
-            nPrecio.Name = "nPrecio";
-            nPrecio.Size = new Size(100, 23);
-            nPrecio.TabIndex = 31;
+            nudPrecio.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            nudPrecio.Location = new Point(151, 140);
+            nudPrecio.Maximum = new decimal(new int[] { 999999999, 0, 0, 0 });
+            nudPrecio.Name = "nudPrecio";
+            nudPrecio.Size = new Size(100, 23);
+            nudPrecio.TabIndex = 34;
             // 
             // dtpFecha
             // 
             dtpFecha.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dtpFecha.Location = new Point(127, 212);
+            dtpFecha.Location = new Point(151, 211);
             dtpFecha.Name = "dtpFecha";
             dtpFecha.Size = new Size(100, 23);
-            dtpFecha.TabIndex = 30;
+            dtpFecha.TabIndex = 33;
             // 
             // lblFecha
             // 
             lblFecha.AutoSize = true;
-            lblFecha.Location = new Point(57, 215);
+            lblFecha.Location = new Point(81, 214);
             lblFecha.Name = "lblFecha";
             lblFecha.Size = new Size(38, 15);
-            lblFecha.TabIndex = 29;
+            lblFecha.TabIndex = 32;
             lblFecha.Text = "Fecha";
             // 
             // lblPrecio
             // 
             lblPrecio.AutoSize = true;
-            lblPrecio.Location = new Point(57, 180);
+            lblPrecio.Location = new Point(81, 147);
             lblPrecio.Name = "lblPrecio";
             lblPrecio.Size = new Size(40, 15);
-            lblPrecio.TabIndex = 28;
+            lblPrecio.TabIndex = 31;
             lblPrecio.Text = "Precio";
             // 
             // lblDesc
             // 
             lblDesc.AutoSize = true;
-            lblDesc.Location = new Point(57, 253);
+            lblDesc.Location = new Point(81, 249);
             lblDesc.Name = "lblDesc";
             lblDesc.Size = new Size(69, 15);
-            lblDesc.TabIndex = 27;
+            lblDesc.TabIndex = 30;
             lblDesc.Text = "Descripción";
             // 
             // lblCategoria
             // 
             lblCategoria.AutoSize = true;
-            lblCategoria.Location = new Point(57, 142);
+            lblCategoria.Location = new Point(81, 111);
             lblCategoria.Name = "lblCategoria";
             lblCategoria.Size = new Size(58, 15);
-            lblCategoria.TabIndex = 26;
+            lblCategoria.TabIndex = 29;
             lblCategoria.Text = "Categoría";
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(57, 104);
+            lblNombre.Location = new Point(81, 75);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(51, 15);
-            lblNombre.TabIndex = 25;
+            lblNombre.TabIndex = 28;
             lblNombre.Text = "Nombre";
             // 
             // lblCodigo
             // 
             lblCodigo.AutoSize = true;
-            lblCodigo.Location = new Point(57, 65);
+            lblCodigo.Location = new Point(81, 40);
             lblCodigo.Name = "lblCodigo";
             lblCodigo.Size = new Size(46, 15);
-            lblCodigo.TabIndex = 24;
+            lblCodigo.TabIndex = 27;
             lblCodigo.Text = "Código";
             // 
-            // textBox3
+            // txtDsc
             // 
-            textBox3.Location = new Point(127, 253);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 52);
-            textBox3.TabIndex = 23;
+            txtDsc.Location = new Point(151, 249);
+            txtDsc.Multiline = true;
+            txtDsc.Name = "txtDsc";
+            txtDsc.Size = new Size(100, 52);
+            txtDsc.TabIndex = 26;
             // 
-            // textBox2
+            // txtCategoria
             // 
-            textBox2.Location = new Point(127, 134);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 22;
+            txtCategoria.Location = new Point(151, 103);
+            txtCategoria.Name = "txtCategoria";
+            txtCategoria.Size = new Size(100, 23);
+            txtCategoria.TabIndex = 25;
             // 
-            // textBox1
+            // txtNombre
             // 
-            textBox1.Location = new Point(127, 96);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 21;
+            txtNombre.Location = new Point(151, 67);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(100, 23);
+            txtNombre.TabIndex = 24;
             // 
-            // txtBuscar
+            // btnModificar
             // 
-            txtBuscar.Location = new Point(127, 57);
-            txtBuscar.Name = "txtBuscar";
-            txtBuscar.Size = new Size(100, 23);
-            txtBuscar.TabIndex = 20;
+            btnModificar.BackColor = Color.Purple;
+            btnModificar.ForeColor = Color.White;
+            btnModificar.Location = new Point(176, 307);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(75, 23);
+            btnModificar.TabIndex = 22;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = false;
+            // 
+            // txtCodigo
+            // 
+            txtCodigo.Location = new Point(151, 32);
+            txtCodigo.Name = "txtCodigo";
+            txtCodigo.Size = new Size(100, 23);
+            txtCodigo.TabIndex = 23;
             // 
             // frmModificar
             // 
@@ -222,15 +219,17 @@
             WindowState = FormWindowState.Minimized;
             gbModificar.ResumeLayout(false);
             gbModificar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)nPrecio).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudStock).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudPrecio).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private GroupBox gbModificar;
-        private Button btnModificar;
-        private NumericUpDown nPrecio;
+        private NumericUpDown nudStock;
+        private Label lblStock;
+        private NumericUpDown nudPrecio;
         private DateTimePicker dtpFecha;
         private Label lblFecha;
         private Label lblPrecio;
@@ -238,11 +237,10 @@
         private Label lblCategoria;
         private Label lblNombre;
         private Label lblCodigo;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private TextBox txtBuscar;
-        private Label label1;
-        private ComboBox comboBox1;
+        private TextBox txtDsc;
+        private TextBox txtCategoria;
+        private TextBox txtNombre;
+        private Button btnModificar;
+        private TextBox txtCodigo;
     }
 }

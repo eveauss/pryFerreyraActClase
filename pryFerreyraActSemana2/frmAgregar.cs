@@ -21,5 +21,10 @@ namespace pryFerreyraInventario
         {
 
         }
+
+        private void gbAgregar_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
